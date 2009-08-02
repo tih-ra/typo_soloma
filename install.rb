@@ -1,5 +1,4 @@
-puts IO::read(File.join(File.dirname(__FILE__),'README'))
-
+# Install hook code here
 unless Kernel.const_defined?('RAILS_ROOT')
   Kernel.const_set('RAILS_ROOT', File.join(File.dirname(__FILE__), '..', '..', '..'))
 end
@@ -41,7 +40,7 @@ end
 PageCache.sweep_all
 
 #Set Up Routes
-
+puts IO::read(File.join(File.dirname(__FILE__),'README'))
 puts "Installation complete!"
 puts "Enjoy :)"
 else
