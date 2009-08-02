@@ -8,9 +8,6 @@ Soloma Theme and Russian Lang for Typo!
 Author: Andriy Bazyuta
 Copyright: Released under the BSD license
 
-For installation theme and default categories for Soloma Blog:
-  ruby script/generate TypoSolomaTheme
 
 Please feel free to e-mail me with feedback!
 
-Enjoy :)

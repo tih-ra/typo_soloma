@@ -1,4 +1,4 @@
-#puts IO::read(File.join(File.dirname(__FILE__),'README'))
+puts IO::read(File.join(File.dirname(__FILE__),'README'))
 puts "Copying files..."
 
 if (File.exists?(RAILS_ROOT) && File.exists?(File.join(RAILS_ROOT, 'app')))
@@ -39,3 +39,4 @@ PageCache.sweep_all
 #Set Up Routes
 
 puts "Installation complete!"
+puts "Enjoy :)"
