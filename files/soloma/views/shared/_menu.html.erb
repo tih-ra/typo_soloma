@@ -1,20 +1,20 @@
 <ul>
-    <li class="page_item <%= 'current_page_item' if (controller.controller_name == "articles" and controller.action_name == "index") %>">
-        <%= link_to image_tag("theme/menu/1_over.gif"), category_path("works") %>
+    <li class="page_item">
+        <%= link_to image_tag("theme/menu/1_#{(controller.controller_name == "categories" and params[:id].to_s == 'works') ? 'clicked' : 'over'}.gif"), category_path("works") %>
     </li>
-    <li class="page_item <%= 'current_page_item' if (controller.action_name != 'index' and controller.action_name != 'view_page') %>">
-       <%= link_to image_tag("theme/menu/2_over.gif"), this_blog.base_url + "/pages/about" %>
+    <li class="page_item">
+       <%= link_to image_tag("theme/menu/2_#{(controller.controller_name == "articles" and controller.action_name == "view_page" and params[:name].to_s == 'about') ? 'clicked' : 'over'}.gif"), this_blog.base_url + "/pages/about" %>
     </li>
-	<li class="page_item <%= 'current_page_item' if (controller.action_name != 'index' and controller.action_name != 'view_page') %>">
-        <%= link_to image_tag("theme/menu/3_over.gif"), category_path("manifest") %>
+	<li class="page_item">
+        <%= link_to image_tag("theme/menu/3_#{(controller.controller_name == "categories" and params[:id].to_s == 'manifest') ? 'clicked' : 'over'}.gif"), category_path("manifest") %>
     </li>
-	<li class="page_item <%= 'current_page_item' if (controller.action_name != 'index' and controller.action_name != 'view_page') %>">
-        <%= link_to image_tag("theme/menu/4_over.gif"), category_path("blogs") %>
+	<li class="page_item">
+        <%= link_to image_tag("theme/menu/4_#{(controller.controller_name == "categories" and params[:id].to_s == 'blogs') ? 'clicked' : 'over'}.gif"), category_path("blogs") %>
     </li>
-	<li class="page_item <%= 'current_page_item' if (controller.action_name != 'index' and controller.action_name != 'view_page') %>">
-       <%= link_to image_tag("theme/menu/5_over.gif"), this_blog.base_url + "/pages/links" %>
+	<li class="page_item">
+       <%= link_to image_tag("theme/menu/5_#{(controller.controller_name == "articles" and controller.action_name == "view_page" and params[:name].to_s == 'links') ? 'clicked' : 'over'}.gif"), this_blog.base_url + "/pages/links" %>
     </li>
-    <li class="page_item <%= 'current_page_item' if (controller.controller_name == "articles" and controller.action_name == "view_page" and params[:name].to_s == 'about') %>">
-        <%= link_to image_tag("theme/menu/6_over.gif"), this_blog.base_url + "/pages/contacts" %>
+    <li class="page_item">
+        <%= link_to image_tag("theme/menu/6_#{(controller.controller_name == "articles" and controller.action_name == "view_page" and params[:name].to_s == 'contacts') ? 'clicked' : 'over'}.gif"), this_blog.base_url + "/pages/contacts" %>
     </li>
 </ul>
