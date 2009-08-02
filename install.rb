@@ -1,14 +1,15 @@
 puts IO::read(File.join(File.dirname(__FILE__),'README'))
-puts "Copying files..."
 
-if (File.exists?(RAILS_ROOT) && File.exists?(File.join(RAILS_ROOT, 'app')))
+
+if (File.exists?(RAILS_ROOT) && File.exists?(File.join(RAILS_ROOT, 'app')) && ActiveRecord::Base.connection)
+  puts "Copying files..."
   require "#{RAILS_ROOT}/config/boot"
   require "#{RAILS_ROOT}/config/environment"
   require 'rails_generator'
   require 'rails_generator/scripts/generate'
  
   Rails::Generator::Scripts::Generate.new.run(['TypoSolomaTheme'])
-end
+
 
 dir = "files/soloma"
 
@@ -40,3 +41,6 @@ PageCache.sweep_all
 
 puts "Installation complete!"
 puts "Enjoy :)"
+else
+puts "Error on instalation! Please check database connection..."
+end
