@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title><%=h page_title %></title>
+  <%= page_header %>
+  <%= stylesheet_link_tag '/stylesheets/theme/application.css', :media => 'all' %>
+</head>
+
+<body>
+    <!-- start header -->
+    <div id="header">
+       
+        <div id="menu">
+            <%=render :partial => "shared/menu"%>
+        </div>
+		<% content_tag :div, :id=>"sub_menu" do %>
+			<%=content_tag :span, link_to("ВСЕ", category_path("works")), :class=>"#{params[:controller]!='tags' ? 'active' : ''}"%>
+			<%=content_tag :span, link_to ("СДЕЛАЛИ", category_tag_path("works", "СДЕЛАЛИ")), :class=>"#{params[:id]=='СДЕЛАЛИ' ? 'active' : ''}"%>
+			<%=content_tag :span, link_to ("ДЕЛАЕМ", category_tag_path("works", "ДЕЛАЕМ")), :class=>"#{params[:id]=='ДЕЛАЕМ' ? 'active' : ''}"%>
+			<%=content_tag :span, link_to ("СДЕЛАЕМ", category_tag_path("works", "СДЕЛАЕМ")), :class=>"#{params[:id]=='СДЕЛАЕМ' ? 'active' : ''}"%>
+		<% end if (params[:category_id] && params[:category_id]=="works") || (params[:controller]=='categories' && params[:id]=='works')%>
+		<div id="popular_tags">
+			<%=link_to "живопись", tag_path("живопись")%>
+			<%=link_to "фото", tag_path("фото")%>
+			<%=link_to "графика", tag_path("графика")%>
+			<%=link_to "видеоарт", tag_path("видеоарт")%>
+			<%=link_to "инсталяция", tag_path("инсталяция")%>
+			<%=link_to "перформанс", tag_path("перформанс")%>
+			<%=link_to "скульптура", tag_path("скульптура")%>
+		</div>
+    </div>
+    <!-- end header -->
+
+  <div id="page">
+    <div id="content" style="<%=render_sidebars.empty? ? 'margin-left:220px' : ''%>">
+      <%= @content_for_layout %>
+      <%= javascript_tag 'show_dates_as_local_time()' %>
+    </div>
+	
+    <div id="sidebar">
+      <!-- sidebar components -->
+      <%= render_sidebars %>
+    </div>
+    <br style="clear:both;" />
+  </div>
+
+  <div id="footer">
+        <div class="wrap">
+        <p id="legal">
+                <div id="footer_menu"><%=render :partial => "shared/menu"%></div>
+            </p>
+        </div>
+  </div>
+</body>
+</html>
+
