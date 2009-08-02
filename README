@@ -1,13 +1,16 @@
 TypoSoloma
 ==========
 
-Introduction goes here.
+Soloma Theme and Russian Lang for Typo!
 
 
-Example
-=======
 
-Example goes here.
+Author: Andriy Bazyuta
+Copyright: Released under the BSD license
 
+For installation theme and default categories for Soloma Blog:
+  ruby script/generate TypoSolomaTheme
 
-Copyright (c) 2009 [name of plugin creator], released under the MIT license
+Please feel free to e-mail me with feedback!
+
+Enjoy :)
