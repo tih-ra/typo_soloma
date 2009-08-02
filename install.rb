@@ -1,5 +1,8 @@
 puts IO::read(File.join(File.dirname(__FILE__),'README'))
 
+unless Kernel.const_defined?('RAILS_ROOT')
+  Kernel.const_set('RAILS_ROOT', File.join(File.dirname(__FILE__), '..', '..', '..'))
+end
 
 if (File.exists?(RAILS_ROOT) && File.exists?(File.join(RAILS_ROOT, 'app')) && ActiveRecord::Base.connection)
   puts "Copying files..."
