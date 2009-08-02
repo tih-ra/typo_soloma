@@ -2,18 +2,10 @@ class TypoSolomaThemeGenerator < Rails::Generator::Base
   def manifest
     STDOUT.sync=true
     record do |m|
-      m.directory File.join('themes', 'soloma')
-      m.template "smart_form.css", File.join('public', 'stylesheets','smart_form.css')
+      m.directory File.join('themes')
+      m.template "soloma", File.join('themes', 'soloma')
       print <<-"EOF"
-Sweeeet...
-The sylet-sheet "smart_form.css" has been created in your public/stylesheets folder.
-Don't forget to add the following line to the head section of your layout:
-        
-<%= stylesheet_link_tag "smart_form" %>
-
-Thank you, and enjoy!
--Jabberwock
-      
+      Yoohooy Soloma Theme is instaled...
       EOF
     end
   end
