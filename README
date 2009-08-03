@@ -11,3 +11,6 @@ Copyright: Released under the BSD license
 
 Please feel free to e-mail me with feedback!
 
+WARNING!!!
+If Your see message like a - Plugin not found: ["git://github.com/tih-ra/typo_soloma.git"]
+please do 'ruby script/runner vendor/plugins/typo_soloma/install.rb' - for complete installation!!
